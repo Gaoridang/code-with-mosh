@@ -16,20 +16,16 @@ function App() {
         md: "150px 1fr",
       }}
     >
-      <GridItem area={"header"} bg={"orange.300"}>
+      <GridItem area={"header"}>
         <Header />
       </GridItem>
-      <GridItem area={"main"} bg={"pink.300"}>
+      <GridItem area={"main"}>
         <MovieGrid />
       </GridItem>
       <Show above="md">
-        <GridItem area={"nav"} bg={"green.300"}>
-          Nav
-        </GridItem>
+        <GridItem area={"nav"}>Nav</GridItem>
       </Show>
-      <GridItem area={"footer"} bg={"blue.300"}>
-        Footer
-      </GridItem>
+      <GridItem area={"footer"}>Footer</GridItem>
     </Grid>
   );
 }
