@@ -1,4 +1,5 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
           <Link>개봉예정작</Link>
           <Link>인기작</Link>
         </Flex>
-        <Box>controller and search bar</Box>
+        <ColorModeSwitch />
       </Flex>
     </>
   );
