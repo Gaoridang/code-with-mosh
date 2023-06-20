@@ -1,5 +1,4 @@
 import { Text } from "@chakra-ui/react";
-import { MovieDetail } from "../hooks/useDetails";
 import {
   BsEmojiHeartEyesFill,
   BsEmojiWinkFill,
@@ -7,21 +6,23 @@ import {
 } from "react-icons/bs";
 
 interface Props {
-  details: MovieDetail;
+  rating: number | undefined;
 }
 
-const getRatingIcon = (rating: number) => {
-  return rating >= 8 ? (
-    <BsEmojiHeartEyesFill />
-  ) : rating >= 7 ? (
-    <BsEmojiWinkFill />
-  ) : (
-    <BsEmojiNeutralFill />
-  );
+const getRatingIcon = (rating: number | undefined) => {
+  if (rating) {
+    return rating >= 8 ? (
+      <BsEmojiHeartEyesFill />
+    ) : rating >= 7 ? (
+      <BsEmojiWinkFill />
+    ) : (
+      <BsEmojiNeutralFill />
+    );
+  }
 };
 
-const MovieRating = ({ details }: Props) => {
-  return <Text>{getRatingIcon(details.vote_average)}</Text>;
+const MovieRating = ({ rating }: Props) => {
+  return <Text>{getRatingIcon(rating)}</Text>;
 };
 
 export default MovieRating;
