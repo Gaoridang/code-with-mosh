@@ -3,7 +3,7 @@ import useMovies from "../hooks/useMovies";
 import MovieCard from "./MovieCard";
 
 const MovieGrid = () => {
-  const { movies, error } = useMovies();
+  const { movies, error } = useMovies("/now_playing");
 
   return (
     <>
@@ -16,7 +16,7 @@ const MovieGrid = () => {
           xl: 4,
         }}
         spacing={10}
-        padding={"10px"}
+        paddingX={"10px"}
       >
         {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />

@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 
 const Header = () => {

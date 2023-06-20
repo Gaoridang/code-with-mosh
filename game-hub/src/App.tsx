@@ -8,7 +8,7 @@ function App() {
     <Grid
       templateAreas={{
         base: `"header" "main" "footer"`,
-        md: `"header header" "nav main" "nav footer"`,
+        md: `"header header" "nav main" "footer footer"`,
       }}
       gridTemplateRows={"50px 1fr 30px"}
       gridTemplateColumns={{
