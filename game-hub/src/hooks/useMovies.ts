@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import { AxiosError, CanceledError } from "axios";
+import { CanceledError } from "axios";
 
 export interface Movie {
   id: number;
@@ -12,7 +12,7 @@ export interface Movie {
   vote_average: number;
 }
 
-interface MovieResponse {
+export interface MovieResponse {
   dates: {
     maximum: string;
     minimun: string;
@@ -21,7 +21,7 @@ interface MovieResponse {
   results: Movie[];
 }
 
-const useMovies = () => {
+const useMovies = (url: string) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState("");
 
@@ -29,7 +29,7 @@ const useMovies = () => {
     const controller = new AbortController();
 
     apiClient
-      .get<MovieResponse>("/now_playing", { signal: controller.signal })
+      .get<MovieResponse>(url, { signal: controller.signal })
       .then((res) => {
         console.log("fetch succeeded");
         setMovies(res.data.results);
