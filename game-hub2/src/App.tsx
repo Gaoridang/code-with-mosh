@@ -10,8 +10,6 @@ function App() {
           base: `'header' 'main' 'footer'`,
           lg: `'header header' 'aside main' 'footer footer'`,
         }}
-        gridTemplateRows={}
-        gridTemplateColumns={}
         p={5}
       >
         <GridItem area={"header"}>
