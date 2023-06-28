@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import apiClient from "../services/api-client";
 
-interface Platform {
+export interface Platform {
   platform: {
     id: number;
     slug: string;
