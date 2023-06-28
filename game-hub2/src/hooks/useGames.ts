@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import apiClient from "../../services/api-client";
+import apiClient from "../services/api-client";
 
 interface Platform {
   platform: {
@@ -9,7 +9,7 @@ interface Platform {
   };
 }
 
-interface Game {
+export interface Game {
   name: string;
   id: number;
   slug: string;
