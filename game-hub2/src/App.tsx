@@ -1,6 +1,7 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "./App.css";
 import Header from "./components/Header";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
@@ -10,18 +11,16 @@ function App() {
           base: `'header' 'main' 'footer'`,
           lg: `'header header' 'aside main' 'footer footer'`,
         }}
-        p={5}
+        px={5}
       >
         <GridItem area={"header"}>
           <Header />
         </GridItem>
         <Show above="lg">
-          <GridItem area={"aside"} bg={"red.400"}>
-            Aside
-          </GridItem>
+          <GridItem area={"aside"}>Aside</GridItem>
         </Show>
-        <GridItem area={"main"} bg={"yellow"}>
-          Main
+        <GridItem area={"main"}>
+          <GameGrid />
         </GridItem>
         <GridItem area={"footer"} bg={"green"}>
           Footer
