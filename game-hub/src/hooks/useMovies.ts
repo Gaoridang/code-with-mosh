@@ -24,6 +24,7 @@ export interface MovieResponse {
 const useMovies = (url: string) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [error, setError] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -33,17 +34,19 @@ const useMovies = (url: string) => {
       .then((res) => {
         console.log("fetch succeeded");
         setMovies(res.data.results);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
         if (err instanceof CanceledError) return;
         setError(err.message);
+        setLoading(false);
       });
 
     return () => controller.abort();
   }, []);
 
-  return { movies, error };
+  return { movies, error, isLoading };
 };
 
 export default useMovies;
