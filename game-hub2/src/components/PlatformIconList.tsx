@@ -1,8 +1,8 @@
 import { Text } from "@chakra-ui/react";
-import { Platform } from "../hooks/useGames";
+import { ParentPlatform } from "../hooks/useGames";
 
 interface Props {
-  platforms: Platform[];
+  platforms: ParentPlatform[];
 }
 
 const PlatformIconList = ({ platforms }: Props) => {
