@@ -12,6 +12,10 @@ function App() {
           base: `'header' 'main' 'footer'`,
           lg: `'header header' 'aside main' 'footer footer'`,
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "200px 1fr",
+        }}
         px={5}
       >
         <GridItem area={"header"}>
